@@ -1,0 +1,274 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+
+/* ================= ROOT ================= */
+:root {
+  --bg-main: #060914;
+  --text-main: #f5f7ff;
+  --text-muted: #9da7d8;
+  --accent: #ffffff;
+}
+
+/* ================= RESET ================= */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Inter', sans-serif;
+}
+
+/* ================= SCROLL ================= */
+html {
+  scroll-behavior: smooth;
+}
+
+/* ================= BODY ================= */
+body {
+  background:
+    radial-gradient(900px circle at 15% 10%, #1e2750 0%, transparent 55%),
+    radial-gradient(700px circle at 85% 20%, #0f1638 0%, transparent 55%),
+    var(--bg-main);
+  color: var(--text-main);
+  line-height: 1.7;
+}
+
+/* ================= TOP NAV ================= */
+.top-nav {
+  position: fixed;
+  top: 24px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 28px;
+  z-index: 100;
+}
+
+
+.top-nav a {
+  color: var(--text-muted);
+  text-decoration: none;
+  font-size: 0.9rem;
+}
+
+.top-nav a:hover {
+  color: #ffffff;
+}
+
+/* ================= HERO ================= */
+.hero {
+  min-height: 100vh;
+  display: flex;
+  align-items: flex-start;
+  padding: 8vh 8vw 0;
+  position: relative;
+}
+
+/* ================= HERO LAYOUT ================= */
+.hero-card {
+  width: 100%;
+  display: grid;
+  grid-template-columns: 380px minmax(0, 1fr);
+  column-gap: 5rem;
+  align-items: start;
+}
+
+/* ================= PROFILE IMAGE ================= */
+.profile {
+  position: relative;
+  padding-top: 4rem;
+}
+
+.profile img {
+  width: 100%;
+  max-width: 340px;
+  object-fit: cover;
+  object-position: center top;   /* KEY FIX */
+  border-radius: 32px;
+  box-shadow:
+    0 40px 80px rgba(0,0,0,0.55),
+    0 0 0 1px rgba(255,255,255,0.08);
+
+  margin-top: 8px;               /* subtle optical nudge */
+}
+
+
+/* ================= HERO TEXT ================= */
+.hero-text {
+  margin-top: 3rem;
+  width: 100%;
+}
+
+.hero-text h2 {
+  font-size: clamp(2.8rem, 5vw, 4rem);
+  font-weight: 800;
+  letter-spacing: -0.04em;
+  line-height: 1.1;
+}
+
+.tagline {
+  margin-top: 1rem;
+  font-size: 1.1rem;
+  color: var(--text-muted);
+}
+
+/* ================= CTA BUTTONS ================= */
+.actions {
+  margin-top: 2.2rem;
+  display: flex;
+  gap: 16px;
+}
+
+.actions a {
+  padding: 14px 28px;
+  border-radius: 16px;
+  background: linear-gradient(135deg, #ffffff, #e1e6ff);
+  color: #000;
+  font-weight: 600;
+  text-decoration: none;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.actions a:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 18px 36px rgba(0,0,0,0.4);
+}
+
+/* ================= BIO HIGHLIGHTS ================= */
+.bio-highlights {
+  margin-top: 2.5rem;
+  max-width: 520px;   /* fixes right-aligned/stretch issue */
+}
+
+.bio-highlights p {
+  font-size: 1.05rem;
+  color: var(--text-muted);
+}
+
+.bio-highlights ul {
+  margin-top: 1.4rem;
+  list-style: none;
+  display: grid;
+  gap: 10px;
+}
+
+.bio-highlights li {
+  font-size: 0.95rem;
+  color: #cfd6ff;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+/* ================= SECTION BASE ================= */
+.section {
+  max-width: 1100px;
+  margin: auto;
+  padding: 3rem 1.5rem;   /* reduced spacing */
+}
+
+.section h2 {
+  font-size: 2.1rem;
+  margin-bottom: 1.2rem;
+  letter-spacing: -0.02em;
+}
+
+.section p {
+  max-width: 760px;
+  color: var(--text-muted);
+  font-size: 1.05rem;
+}
+
+/* ================= TIMELINE ================= */
+.timeline {
+  margin-top: 2rem;
+  display: grid;
+  gap: 2rem;
+}
+
+.item {
+  background: rgba(255,255,255,0.05);
+  border-radius: 22px;
+  padding: 2rem;
+  border: 1px solid rgba(255,255,255,0.1);
+  box-shadow: 0 25px 50px rgba(0,0,0,0.45);
+}
+
+.item span {
+  color: var(--text-muted);
+  font-size: 0.9rem;
+}
+
+.item h3 {
+  margin: 0.6rem 0 0.9rem;
+}
+
+/* ================= CARDS ================= */
+.cards {
+  margin-top: 2rem;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 2rem;
+}
+
+.card {
+  background: rgba(255,255,255,0.05);
+  border-radius: 22px;
+  padding: 2rem;
+  border: 1px solid rgba(255,255,255,0.1);
+  box-shadow: 0 25px 50px rgba(0,0,0,0.45);
+}
+
+/* ================= TAGS ================= */
+.tags {
+  margin-top: 2rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.tags span {
+  padding: 9px 16px;
+  background: rgba(255,255,255,0.9);
+  color: #000;
+  border-radius: 999px;
+  font-size: 0.85rem;
+  font-weight: 500;
+}
+
+/* ================= FOOTER ================= */
+footer {
+  padding: 2rem 1.5rem;
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  text-align: center;
+}
+
+/* ================= MOBILE ================= */
+@media (max-width: 900px) {
+  .hero {
+    padding: 4rem 1.5rem;
+  }
+
+  .hero-card {
+    grid-template-columns: 1fr;
+    row-gap: 2.5rem;
+    align-items: center;
+  }
+
+  .profile img {
+    transform: none;
+    margin: auto;
+    max-width: 260px;
+  }
+
+  .hero-text {
+    margin-top: 0;
+  }
+
+  .bio-highlights {
+    max-width: 100%;
+  }
+
+  .top-nav {
+    display: none;
+  }
+}
